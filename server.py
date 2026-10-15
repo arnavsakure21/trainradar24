@@ -637,5 +637,12 @@ def run_server():
         except KeyboardInterrupt:
             print("\nShutting down server.")
 
+def app(environ, start_response):
+    start_response('200 OK', [('Content-Type', 'text/plain; charset=utf-8')])
+    return [b"RailRadar backend is running on Railway."]
+
+application = app
+handler = app
+
 if __name__ == "__main__":
     run_server()
