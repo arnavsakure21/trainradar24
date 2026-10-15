@@ -152,6 +152,21 @@ export class SearchBar {
     const matchedStations = scoredStations.slice(0, 5).map(item => item.station);
 
     if (matchedTrains.length === 0 && matchedStations.length === 0) {
+      const isNum = /^\d{4,5}$/.test(query.trim());
+      if (isNum) {
+        this.dropdown.innerHTML = `
+          <div class="search-result-item" data-type="train" data-id="${query.trim()}">
+            <div>
+              <div class="search-result-title">📡 Query Live Indian Railways GPS for #${query.trim()}</div>
+              <div class="search-result-sub">Connect to NTES & RapidAPI for real-time timetable</div>
+            </div>
+            <span class="badge badge-brand">Search Live</span>
+          </div>
+        `;
+        this.dropdown.classList.add('open');
+        this.attachItemListeners();
+        return;
+      }
       this.dropdown.innerHTML = `<div style="padding:16px; font-size:12px; color:var(--text-tertiary); text-align:center;">No results found for "${query}"</div>`;
       this.dropdown.classList.add('open');
       return;

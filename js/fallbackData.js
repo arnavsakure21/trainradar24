@@ -319,10 +319,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Vande Bharat Express",
     "operator": "Indian Railways",
     "type": "VANDE_BHARAT",
-    "lat": 27.240775,
-    "lng": 77.972474,
+    "lat": 28.046006,
+    "lng": 77.524756,
     "bearing": 153.6,
-    "speed": 123,
+    "speed": 130,
     "maxSpeed": 160,
     "status": "ON_TIME",
     "delayMinutes": 0,
@@ -371,10 +371,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Howrah Rajdhani Express",
     "operator": "Indian Railways (Eastern Zone)",
     "type": "RAJDHANI",
-    "lat": 24.855305,
-    "lng": 84.754756,
-    "bearing": 286.4,
-    "speed": 110,
+    "lat": 23.944883,
+    "lng": 86.216117,
+    "bearing": 307.7,
+    "speed": 109,
     "maxSpeed": 130,
     "status": "ON_TIME",
     "delayMinutes": 0,
@@ -435,10 +435,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Mumbai Tejas Rajdhani",
     "operator": "Indian Railways (Western Zone)",
     "type": "RAJDHANI",
-    "lat": 21.637909,
-    "lng": 72.975115,
-    "bearing": 196.0,
-    "speed": 121,
+    "lat": 22.708561,
+    "lng": 73.908258,
+    "bearing": 239.4,
+    "speed": 113,
     "maxSpeed": 140,
     "status": "ON_TIME",
     "delayMinutes": 3,
@@ -499,10 +499,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Bhopal Shatabdi Express",
     "operator": "Indian Railways (Northern Zone)",
     "type": "SHATABDI",
-    "lat": 24.45172,
-    "lng": 78.042084,
-    "bearing": 205.9,
-    "speed": 142,
+    "lat": 25.529132,
+    "lng": 78.528055,
+    "bearing": 155.6,
+    "speed": 135,
     "maxSpeed": 150,
     "status": "ON_TIME",
     "delayMinutes": 0,
@@ -551,9 +551,9 @@ export const FALLBACK_TRAINS = [
     "trainName": "Mysuru - Chennai Vande Bharat",
     "operator": "Indian Railways (Southern Zone)",
     "type": "VANDE_BHARAT",
-    "lat": 12.505518,
-    "lng": 76.919624,
-    "bearing": 54.6,
+    "lat": 13.039853,
+    "lng": 79.962326,
+    "bearing": 81.8,
     "speed": 116,
     "maxSpeed": 130,
     "status": "ON_TIME",
@@ -603,10 +603,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Howrah - Yesvantpur Duronto Express",
     "operator": "Indian Railways (South Eastern Zone)",
     "type": "DURONTO",
-    "lat": 19.245584,
-    "lng": 84.775313,
-    "bearing": 223.8,
-    "speed": 105,
+    "lat": 20.977603,
+    "lng": 86.574245,
+    "bearing": 226.1,
+    "speed": 112,
     "maxSpeed": 120,
     "status": "DELAYED",
     "delayMinutes": 22,
@@ -659,10 +659,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Kerala Superfast Express",
     "operator": "Indian Railways (Southern Zone)",
     "type": "SUPERFAST",
-    "lat": 17.720336,
-    "lng": 78.540334,
-    "bearing": 188.7,
-    "speed": 91,
+    "lat": 21.589172,
+    "lng": 78.736791,
+    "bearing": 143.4,
+    "speed": 99,
     "maxSpeed": 110,
     "status": "DELAYED",
     "delayMinutes": 14,
@@ -724,25 +724,25 @@ export const FALLBACK_TRAINS = [
   },
   {
     "trainNumber": "12051",
-    "trainName": "Mumbai - Madgaon Jan Shatabdi Express",
+    "trainName": "Mao Jan Shatabdi Express",
     "operator": "Indian Railways (Konkan Railway)",
     "type": "SHATABDI",
-    "lat": 17.331126,
-    "lng": 73.423963,
-    "bearing": 197.4,
-    "speed": 99,
+    "lat": 16.578835,
+    "lng": 73.53933,
+    "bearing": 152.0,
+    "speed": 100,
     "maxSpeed": 120,
     "status": "ON_TIME",
     "delayMinutes": 0,
     "origin": {
       "code": "CSMT",
-      "name": "Mumbai CSMT",
+      "name": "C Shivaji Mah T",
       "departure": "05:10"
     },
     "destination": {
       "code": "MAO",
-      "name": "Madgaon Jn (Goa)",
-      "arrival": "14:10"
+      "name": "Madgaon",
+      "arrival": "16:40"
     },
     "nextStop": {
       "code": "RN",
@@ -756,37 +756,57 @@ export const FALLBACK_TRAINS = [
         72.8354
       ],
       [
+        19.0178,
+        72.8478
+      ],
+      [
+        19.186,
+        72.9759
+      ],
+      [
         18.9894,
         73.1175
       ],
       [
-        18.2322,
-        73.4428
-      ],
-      [
-        17.6534,
-        73.5298
+        17.5323,
+        73.5186
       ],
       [
         16.9902,
         73.312
       ],
       [
+        16.27,
+        73.71
+      ],
+      [
+        16.01,
+        73.69
+      ],
+      [
+        15.9,
+        73.82
+      ],
+      [
+        15.61,
+        73.86
+      ],
+      [
         15.2736,
         73.9582
       ]
     ],
-    "stopsCount": 4
+    "stopsCount": 11
   },
   {
     "trainNumber": "12106",
     "trainName": "Vidarbha Superfast Express",
     "operator": "Indian Railways (Central Railway)",
     "type": "SUPERFAST",
-    "lat": 19.226939,
-    "lng": 73.118932,
-    "bearing": 223.1,
-    "speed": 105,
+    "lat": 20.057205,
+    "lng": 74.041718,
+    "bearing": 242.5,
+    "speed": 98,
     "maxSpeed": 110,
     "status": "ON_TIME",
     "delayMinutes": 0,
@@ -859,10 +879,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Karnataka Express",
     "operator": "Indian Railways (South Western Zone)",
     "type": "SUPERFAST",
-    "lat": 16.488989,
-    "lng": 78.305585,
-    "bearing": 10.9,
-    "speed": 116,
+    "lat": 28.350165,
+    "lng": 77.35564,
+    "bearing": 334.0,
+    "speed": 108,
     "maxSpeed": 120,
     "status": "ON_TIME",
     "delayMinutes": 5,

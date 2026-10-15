@@ -15,7 +15,7 @@ import sys
 import mimetypes
 import time
 import math
-from datetime import datetime, timezone
+from datetime import datetime, timezone, timedelta
 
 PORT = int(os.environ.get("PORT", 8080))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
@@ -246,28 +246,40 @@ TRAIN_DATABASE = [
     },
     {
         "trainNumber": "12051",
-        "trainName": "Mumbai - Madgaon Jan Shatabdi Express",
+        "trainName": "Mao Jan Shatabdi Express",
         "operator": "Indian Railways (Konkan Railway)",
         "type": "SHATABDI",
         "speed": 105,
         "maxSpeed": 120,
         "status": "ON_TIME",
         "delayMinutes": 0,
-        "origin": {"code": "CSMT", "name": "Mumbai CSMT", "departure": "05:10"},
-        "destination": {"code": "MAO", "name": "Madgaon Jn (Goa)", "arrival": "14:10"},
+        "origin": {"code": "CSMT", "name": "C Shivaji Mah T", "departure": "05:10"},
+        "destination": {"code": "MAO", "name": "Madgaon", "arrival": "16:40"},
         "routeCoords": [
-            [18.9401, 72.8354], # Mumbai CSMT
-            [18.9894, 73.1175], # Panvel
-            [18.2322, 73.4428], # Roha
-            [17.6534, 73.5298], # Chiplun
-            [16.9902, 73.3120], # Ratnagiri
-            [15.2736, 73.9582]  # Madgaon
+            [18.9401, 72.8354],
+            [19.0178, 72.8478],
+            [19.1860, 72.9759],
+            [18.9894, 73.1175],
+            [17.5323, 73.5186],
+            [16.9902, 73.3120],
+            [16.2700, 73.7100],
+            [16.0100, 73.6900],
+            [15.9000, 73.8200],
+            [15.6100, 73.8600],
+            [15.2736, 73.9582]
         ],
         "stops": [
-            {"sequence": 1, "stationCode": "CSMT", "stationName": "Mumbai CSMT", "platform": "12", "scheduledArrival": None, "scheduledDeparture": "05:10", "actualDeparture": "05:10", "status": "DEPARTED", "delayMinutes": 0, "lat": 18.9401, "lon": 72.8354, "elevation": 8},
-            {"sequence": 2, "stationCode": "PNVL", "stationName": "Panvel Jn", "platform": "5", "scheduledArrival": "06:03", "scheduledDeparture": "06:05", "actualArrival": "06:03", "actualDeparture": "06:05", "status": "DEPARTED", "delayMinutes": 0, "lat": 18.9894, "lon": 73.1175, "elevation": 12},
-            {"sequence": 3, "stationCode": "RN", "stationName": "Ratnagiri", "platform": "1", "scheduledArrival": "10:15", "scheduledDeparture": "10:20", "actualArrival": "10:15", "actualDeparture": "10:20", "status": "CURRENT", "delayMinutes": 0, "lat": 16.9902, "lon": 73.3120, "elevation": 125},
-            {"sequence": 4, "stationCode": "MAO", "stationName": "Madgaon Jn", "platform": "3", "scheduledArrival": "14:10", "scheduledDeparture": None, "actualArrival": "14:10", "actualDeparture": None, "status": "SCHEDULED", "delayMinutes": 0, "lat": 15.2736, "lon": 73.9582, "elevation": 9}
+            {"sequence": 1, "stationCode": "CSMT", "stationName": "C Shivaji Mah T", "platform": "12", "scheduledArrival": None, "scheduledDeparture": "05:10", "actualDeparture": "05:10", "status": "DEPARTED", "delayMinutes": 0, "lat": 18.9401, "lon": 72.8354, "elevation": 8, "distanceKm": 0},
+            {"sequence": 2, "stationCode": "DR", "stationName": "Dadar", "platform": "4", "scheduledArrival": "05:18", "scheduledDeparture": "05:20", "actualArrival": "05:18", "actualDeparture": "05:20", "status": "DEPARTED", "delayMinutes": 0, "lat": 19.0178, "lon": 72.8478, "elevation": 10, "distanceKm": 9},
+            {"sequence": 3, "stationCode": "TNA", "stationName": "Thane", "platform": "7", "scheduledArrival": "05:43", "scheduledDeparture": "05:45", "actualArrival": "05:43", "actualDeparture": "05:45", "status": "DEPARTED", "delayMinutes": 0, "lat": 19.1860, "lon": 72.9759, "elevation": 14, "distanceKm": 34},
+            {"sequence": 4, "stationCode": "PNVL", "stationName": "Panvel", "platform": "5", "scheduledArrival": "06:23", "scheduledDeparture": "06:25", "actualArrival": "06:23", "actualDeparture": "06:25", "status": "DEPARTED", "delayMinutes": 0, "lat": 18.9894, "lon": 73.1175, "elevation": 12, "distanceKm": 69},
+            {"sequence": 5, "stationCode": "CHI", "stationName": "Chiplun", "platform": "1", "scheduledArrival": "09:52", "scheduledDeparture": "09:54", "actualArrival": "09:52", "actualDeparture": "09:54", "status": "DEPARTED", "delayMinutes": 0, "lat": 17.5323, "lon": 73.5186, "elevation": 25, "distanceKm": 325},
+            {"sequence": 6, "stationCode": "RN", "stationName": "Ratnagiri", "platform": "1", "scheduledArrival": "11:20", "scheduledDeparture": "11:25", "actualArrival": "11:20", "actualDeparture": "11:25", "status": "CURRENT", "delayMinutes": 0, "lat": 16.9902, "lon": 73.3120, "elevation": 125, "distanceKm": 431},
+            {"sequence": 7, "stationCode": "KKW", "stationName": "Kankavali", "platform": "1", "scheduledArrival": "13:40", "scheduledDeparture": "13:42", "actualArrival": "13:40", "actualDeparture": "13:42", "status": "SCHEDULED", "delayMinutes": 0, "lat": 16.2700, "lon": 73.7100, "elevation": 45, "distanceKm": 587},
+            {"sequence": 8, "stationCode": "KUDL", "stationName": "Kudal", "platform": "1", "scheduledArrival": "14:20", "scheduledDeparture": "14:22", "actualArrival": "14:20", "actualDeparture": "14:22", "status": "SCHEDULED", "delayMinutes": 0, "lat": 16.0100, "lon": 73.6900, "elevation": 22, "distanceKm": 626},
+            {"sequence": 9, "stationCode": "SWV", "stationName": "Sawantwadi Road", "platform": "1", "scheduledArrival": "14:42", "scheduledDeparture": "14:44", "actualArrival": "14:42", "actualDeparture": "14:44", "status": "SCHEDULED", "delayMinutes": 0, "lat": 15.9000, "lon": 73.8200, "elevation": 42, "distanceKm": 655},
+            {"sequence": 10, "stationCode": "THVM", "stationName": "Thivim", "platform": "2", "scheduledArrival": "15:30", "scheduledDeparture": "15:32", "actualArrival": "15:30", "actualDeparture": "15:32", "status": "SCHEDULED", "delayMinutes": 0, "lat": 15.6100, "lon": 73.8600, "elevation": 28, "distanceKm": 701},
+            {"sequence": 11, "stationCode": "MAO", "stationName": "Madgaon", "platform": "3", "scheduledArrival": "16:40", "scheduledDeparture": None, "actualArrival": "16:40", "actualDeparture": None, "status": "SCHEDULED", "delayMinutes": 0, "lat": 15.2736, "lon": 73.9582, "elevation": 9, "distanceKm": 765}
         ]
     },
     {
@@ -361,6 +373,201 @@ STATIONS_DATABASE = [
     {"code": "MAO", "name": "Madgaon Junction", "city": "Goa", "zone": "Konkan Railway", "platforms": 4, "lat": 15.2736, "lon": 73.9582, "facilities": ["WIFI", "ACCESSIBLE", "FOOD", "ATM"], "elevation": 9}
 ]
 
+# Station coordinates lookup (code -> (lat, lon, elevation))
+STATION_COORDS = {s["code"]: (s["lat"], s["lon"], s.get("elevation", 100)) for s in STATIONS_DATABASE}
+
+# Extended station coordinates for all major Indian rail routes & Konkan railway
+EXTRA_STATION_COORDS = {
+    "DR": (19.0178, 72.8478, 10),
+    "TNA": (19.1860, 72.9759, 14),
+    "PNVL": (18.9894, 73.1175, 12),
+    "ROHA": (18.2322, 73.4428, 15),
+    "MNI": (18.1700, 73.3300, 18),
+    "KHED": (17.7200, 73.3900, 22),
+    "CHI": (17.5323, 73.5186, 25),
+    "SGR": (17.0600, 73.4900, 75),
+    "RN": (16.9902, 73.3120, 125),
+    "ADVI": (16.7900, 73.4200, 80),
+    "RAJP": (16.6500, 73.5200, 60),
+    "VBW": (16.4800, 73.6100, 50),
+    "KKW": (16.2700, 73.7100, 45),
+    "SNDD": (16.1400, 73.6900, 35),
+    "KUDL": (16.0100, 73.6900, 22),
+    "SWV": (15.9000, 73.8200, 42),
+    "MADR": (15.7500, 73.8300, 30),
+    "PERN": (15.7100, 73.8000, 25),
+    "THVM": (15.6100, 73.8600, 28),
+    "KRMI": (15.4800, 73.9100, 15),
+    "MAO": (15.2736, 73.9582, 9),
+    "BRD": (21.2408, 79.6644, 286),
+    "G": (21.4601, 80.1960, 311),
+    "DLI": (28.6609, 77.2272, 215),
+    "NZM": (28.5888, 77.2536, 214),
+    "SDAH": (22.5697, 88.3713, 10),
+    "MS": (13.0780, 80.2600, 8),
+    "YPR": (13.0234, 77.5501, 915),
+    "SC": (17.4334, 78.5015, 540),
+    "HYB": (17.3920, 78.4690, 535),
+    "ADI": (23.0225, 72.5714, 53),
+    "BRC": (22.3072, 73.1812, 35),
+    "RTM": (23.3315, 75.0367, 493),
+    "LKO": (26.8322, 80.9231, 123),
+    "DDU": (25.2818, 83.1167, 79),
+    "PNBE": (25.6022, 85.1376, 53),
+    "GAYA": (24.7914, 85.0002, 113),
+    "ASN": (23.6889, 86.9661, 115),
+    "DHN": (23.7957, 86.4304, 227),
+    "ET": (22.6100, 77.7600, 305),
+    "JBP": (23.1686, 79.9339, 393),
+    "GWL": (26.2183, 78.1828, 212),
+    "AGC": (27.1767, 78.0081, 169),
+    "PUNE": (18.5289, 73.8744, 560),
+    "SUR": (17.6599, 75.9064, 460),
+    "VSKP": (17.6868, 83.2185, 5),
+    "BBS": (20.2961, 85.8245, 45),
+    "TVC": (8.5241, 76.9366, 10),
+    "ERS": (9.9700, 76.2800, 4)
+}
+STATION_COORDS.update(EXTRA_STATION_COORDS)
+RAPIDAPI_DYNAMIC_TRAINS = {}
+
+def parse_rapidapi_train_response(data, train_number):
+    try:
+        body = data.get("body", [])
+        if not body:
+            return None
+        trains_list = body[0].get("trains", [])
+        if not trains_list:
+            return None
+        t = trains_list[0]
+        schedule = t.get("schedule", [])
+        if not schedule:
+            return None
+
+        stops = []
+        route_coords = []
+        total_dist = 0
+
+        for idx, item in enumerate(schedule):
+            code = item.get("stationCode", "").strip()
+            name = item.get("stationName", code).strip()
+            dist_km = float(item.get("distance", 0) or 0)
+            if dist_km > total_dist:
+                total_dist = dist_km
+
+            coord = STATION_COORDS.get(code)
+            if coord:
+                lat, lon, elev = coord
+            else:
+                lat, lon, elev = (21.0, 78.0, 150)
+
+            arr = item.get("arrivalTime")
+            dep = item.get("departureTime")
+            if arr == "--": arr = None
+            if dep == "--": dep = None
+
+            stops.append({
+                "sequence": idx + 1,
+                "stationCode": code,
+                "stationName": name,
+                "platform": "1",
+                "scheduledArrival": arr,
+                "scheduledDeparture": dep,
+                "actualArrival": arr,
+                "actualDeparture": dep,
+                "status": "SCHEDULED" if idx > 0 else "DEPARTED",
+                "delayMinutes": 0,
+                "lat": lat,
+                "lon": lon,
+                "elevation": elev,
+                "distanceKm": dist_km
+            })
+            route_coords.append([lat, lon])
+
+        # Fill any missing station coordinates along route via interpolation
+        for i, s in enumerate(stops):
+            if s["stationCode"] not in STATION_COORDS:
+                prev_known = next((stops[k] for k in range(i - 1, -1, -1) if stops[k]["stationCode"] in STATION_COORDS), None)
+                next_known = next((stops[k] for k in range(i + 1, len(stops)) if stops[k]["stationCode"] in STATION_COORDS), None)
+                if prev_known and next_known and next_known["distanceKm"] > prev_known["distanceKm"]:
+                    ratio = (s["distanceKm"] - prev_known["distanceKm"]) / (next_known["distanceKm"] - prev_known["distanceKm"])
+                    s["lat"] = round(prev_known["lat"] + (next_known["lat"] - prev_known["lat"]) * ratio, 4)
+                    s["lon"] = round(prev_known["lon"] + (next_known["lon"] - prev_known["lon"]) * ratio, 4)
+                    route_coords[i] = [s["lat"], s["lon"]]
+
+        origin_code = t.get("stationFrom", stops[0]["stationCode"])
+        dest_code = t.get("stationTo", stops[-1]["stationCode"])
+        origin_name = t.get("origin", stops[0]["stationName"])
+        dest_name = t.get("destination", stops[-1]["stationName"])
+
+        res = {
+            "trainNumber": str(t.get("trainNumber", train_number)),
+            "trainName": t.get("trainName", f"Train {train_number}"),
+            "operator": "Indian Railways",
+            "type": "SUPERFAST" if "janshatabdi" in t.get("trainName", "").lower() or "express" in t.get("trainName", "").lower() else "EXPRESS",
+            "speed": 105,
+            "maxSpeed": 130,
+            "status": "ON_TIME",
+            "delayMinutes": 0,
+            "origin": {
+                "code": origin_code,
+                "name": origin_name,
+                "departure": stops[0]["scheduledDeparture"] or "05:00"
+            },
+            "destination": {
+                "code": dest_code,
+                "name": dest_name,
+                "arrival": stops[-1]["scheduledArrival"] or "23:00"
+            },
+            "routeCoords": [[s["lat"], s["lon"]] for s in stops],
+            "stops": stops,
+            "journeyClasses": t.get("journeyClasses", ["2S", "SL", "3A", "2A"]),
+            "runningOn": t.get("runningOn", "YYYYYYY")
+        }
+        return res
+    except Exception as ex:
+        print(f"[RailRadar] Error parsing RapidAPI payload: {ex}")
+        return None
+
+def fetch_rapidapi_train_status(train_number):
+    api_key = KEYS.get("rapidapi", "")
+    if not api_key:
+        return None
+
+    cache_key = f"rapidapi_train_{train_number}"
+    cached = get_cached(cache_key, 300)
+    if cached:
+        return cached
+
+    ist = timezone(timedelta(hours=5, minutes=30))
+    date_str = datetime.now(ist).strftime("%Y%m%d")
+
+    url = (
+        f"https://indian-railway-irctc.p.rapidapi.com/api/trains/v1/train/status"
+        f"?departure_date={date_str}&isH5=true&client=web"
+        f"&deviceIdentifier=Mozilla%2520Firefox-138.0.0.0&train_number={train_number}"
+    )
+
+    headers = {
+        "x-rapidapi-key": api_key,
+        "x-rapidapi-host": "indian-railway-irctc.p.rapidapi.com",
+        "User-Agent": "RailRadar/2.0"
+    }
+
+    try:
+        req = urllib.request.Request(url, headers=headers)
+        with urllib.request.urlopen(req, timeout=8) as resp:
+            data = json.loads(resp.read().decode("utf-8"))
+            parsed = parse_rapidapi_train_response(data, train_number)
+            if parsed:
+                set_cached(cache_key, parsed)
+                RAPIDAPI_DYNAMIC_TRAINS[str(train_number)] = parsed
+                return parsed
+    except Exception as ex:
+        print(f"[RailRadar] RapidAPI fetch error for train {train_number}: {ex}")
+
+    return None
+
 def calculate_bearing(lat1, lon1, lat2, lon2):
     phi1, phi2 = math.radians(lat1), math.radians(lat2)
     delta_lambda = math.radians(lon2 - lon1)
@@ -376,8 +583,9 @@ def compute_live_train_positions():
     """
     current_time = time.time()
     live_trains = []
+    all_trains = TRAIN_DATABASE + list(RAPIDAPI_DYNAMIC_TRAINS.values())
 
-    for idx, train in enumerate(TRAIN_DATABASE):
+    for idx, train in enumerate(all_trains):
         coords = train["routeCoords"]
         total_segments = len(coords) - 1
         if total_segments < 1:
@@ -484,7 +692,12 @@ class RailRadarRequestHandler(http.server.SimpleHTTPRequestHandler):
         # 2. API: Train Detail by Number
         if path.startswith("/api/trains/") and len(path.split("/")) >= 4:
             train_num = path.split("/")[3]
-            matched = next((t for t in TRAIN_DATABASE if t["trainNumber"] == train_num), None)
+            matched = None
+            if KEYS.get("rapidapi"):
+                matched = fetch_rapidapi_train_status(train_num)
+            if not matched:
+                matched = RAPIDAPI_DYNAMIC_TRAINS.get(train_num) or next((t for t in TRAIN_DATABASE if t["trainNumber"] == train_num), None)
+
             if matched:
                 # Attach computed live position
                 live_trains = compute_live_train_positions()
@@ -496,6 +709,14 @@ class RailRadarRequestHandler(http.server.SimpleHTTPRequestHandler):
                         "lng": live_info["lng"],
                         "bearing": live_info["bearing"],
                         "speed": live_info["speed"]
+                    }
+                elif "routeCoords" in res and len(res["routeCoords"]) > 0:
+                    mid = len(res["routeCoords"]) // 2
+                    res["currentPosition"] = {
+                        "lat": res["routeCoords"][mid][0],
+                        "lng": res["routeCoords"][mid][1],
+                        "bearing": 180.0,
+                        "speed": res.get("speed", 100)
                     }
                 self.send_response(200)
                 self.send_header("Content-Type", "application/json")
@@ -629,8 +850,8 @@ class RailRadarRequestHandler(http.server.SimpleHTTPRequestHandler):
         # 6. API: Elevation Profile Proxy & Generator
         if path == "/api/elevation/profile":
             train_num = query.get("train", [None])[0]
-            matched = next((t for t in TRAIN_DATABASE if t["trainNumber"] == train_num), TRAIN_DATABASE[0])
-            stops = matched["stops"]
+            matched = RAPIDAPI_DYNAMIC_TRAINS.get(train_num) or next((t for t in TRAIN_DATABASE if t["trainNumber"] == train_num), TRAIN_DATABASE[0])
+            stops = matched.get("stops", [])
 
             # Generate high-resolution 50-point elevation curve
             elevation_points = []

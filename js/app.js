@@ -155,7 +155,23 @@ class RailRadarApp {
   }
 
   async openTrain(trainNumber) {
-    const train = this.trains.find(t => t.trainNumber === trainNumber) || { trainNumber };
+    let train = this.trains.find(t => t.trainNumber === trainNumber);
+    if (!train || !train.stops) {
+      try {
+        const fetched = await api.getTrainDetail(trainNumber);
+        if (fetched && fetched.trainNumber) {
+          train = fetched;
+          if (!this.trains.some(t => t.trainNumber === fetched.trainNumber)) {
+            this.trains.push(fetched);
+            this.trainLayer.updateTrains(this.trains);
+            this.searchBar.setData(this.trains, this.stations);
+            this.updateStatusBadge();
+          }
+        }
+      } catch (e) {
+        if (!train) train = { trainNumber };
+      }
+    }
     this.stationDrawer.close();
     await this.trainDrawer.open(train);
   }
