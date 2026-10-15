@@ -20,8 +20,21 @@ from datetime import datetime, timezone, timedelta
 PORT = int(os.environ.get("PORT", 8080))
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 
-# API Keys — loaded from environment variables (set in Railway dashboard).
-# Never hardcode keys here. Set them in Railway: Settings → Variables.
+# Load local .env file if present
+env_file = os.path.join(BASE_DIR, ".env")
+if os.path.exists(env_file):
+    try:
+        with open(env_file, "r", encoding="utf-8") as f:
+            for line in f:
+                line = line.strip()
+                if line and not line.startswith("#") and "=" in line:
+                    k, v = line.split("=", 1)
+                    if k.strip() not in os.environ:
+                        os.environ[k.strip()] = v.strip()
+    except Exception:
+        pass
+
+# API Keys — loaded from environment variables or .env file
 KEYS = {
     "railradar": os.environ.get("RAILRADAR_KEY", ""),
     "rapidapi": os.environ.get("RAPIDAPI_KEY", ""),
