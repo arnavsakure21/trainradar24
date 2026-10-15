@@ -380,10 +380,8 @@ class RailRadarRequestHandler(http.server.SimpleHTTPRequestHandler):
         super().end_headers()
 
     def _send_cors_headers(self):
-        """Add CORS headers so Vercel-hosted frontend can call this Railway backend."""
-        self.send_header("Access-Control-Allow-Origin", "*")
-        self.send_header("Access-Control-Allow-Methods", "GET, OPTIONS")
-        self.send_header("Access-Control-Allow-Headers", "Content-Type, Authorization")
+        """CORS headers are already added once in end_headers()."""
+        pass
 
     def do_OPTIONS(self):
         self.send_response(200)
