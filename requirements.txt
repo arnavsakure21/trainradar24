@@ -1,0 +1,3 @@
+# TrainRadar24 Python BFF Server
+# Uses Python standard library only — no third-party packages required.
+# Railway uses this file to detect the project as a Python app.
