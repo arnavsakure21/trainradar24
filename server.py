@@ -24,6 +24,7 @@ BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 # Never hardcode keys here. Set them in Railway: Settings → Variables.
 KEYS = {
     "railradar": os.environ.get("RAILRADAR_KEY", ""),
+    "rapidapi": os.environ.get("RAPIDAPI_KEY", ""),
     "maptiler": os.environ.get("MAPTILER_KEY", ""),
     "openweather": os.environ.get("OPENWEATHER_KEY", ""),
     "opentopography": os.environ.get("OPENTOPOGRAPHY_KEY", "")
@@ -268,6 +269,72 @@ TRAIN_DATABASE = [
             {"sequence": 3, "stationCode": "RN", "stationName": "Ratnagiri", "platform": "1", "scheduledArrival": "10:15", "scheduledDeparture": "10:20", "actualArrival": "10:15", "actualDeparture": "10:20", "status": "CURRENT", "delayMinutes": 0, "lat": 16.9902, "lon": 73.3120, "elevation": 125},
             {"sequence": 4, "stationCode": "MAO", "stationName": "Madgaon Jn", "platform": "3", "scheduledArrival": "14:10", "scheduledDeparture": None, "actualArrival": "14:10", "actualDeparture": None, "status": "SCHEDULED", "delayMinutes": 0, "lat": 15.2736, "lon": 73.9582, "elevation": 9}
         ]
+    },
+    {
+        "trainNumber": "12106",
+        "trainName": "Vidarbha Superfast Express",
+        "operator": "Indian Railways (Central Railway)",
+        "type": "SUPERFAST",
+        "speed": 105,
+        "maxSpeed": 110,
+        "status": "ON_TIME",
+        "delayMinutes": 0,
+        "origin": {"code": "G", "name": "Gondia Jn", "departure": "14:55"},
+        "destination": {"code": "CSMT", "name": "Mumbai CSMT", "arrival": "06:50"},
+        "routeCoords": [
+            [21.4601, 80.1960],
+            [21.2408, 79.6644],
+            [21.1458, 79.0882],
+            [20.7453, 78.5971],
+            [20.8576, 77.7289],
+            [20.7059, 77.0019],
+            [21.0475, 75.7909],
+            [20.2514, 74.4377],
+            [19.9547, 73.8327],
+            [19.2437, 73.1355],
+            [18.9401, 72.8354]
+        ],
+        "stops": [
+            {"sequence": 1, "stationCode": "G", "stationName": "Gondia Jn", "platform": "3", "scheduledArrival": None, "scheduledDeparture": "14:55", "actualDeparture": "14:55", "status": "DEPARTED", "delayMinutes": 0, "lat": 21.4601, "lon": 80.1960, "elevation": 311},
+            {"sequence": 2, "stationCode": "BRD", "stationName": "Bhandara Road", "platform": "1", "scheduledArrival": "15:43", "scheduledDeparture": "15:45", "actualArrival": "15:43", "actualDeparture": "15:45", "status": "DEPARTED", "delayMinutes": 0, "lat": 21.2408, "lon": 79.6644, "elevation": 286},
+            {"sequence": 3, "stationCode": "NGP", "stationName": "Nagpur Jn", "platform": "8", "scheduledArrival": "16:55", "scheduledDeparture": "17:00", "actualArrival": "16:55", "actualDeparture": "17:00", "status": "CURRENT", "delayMinutes": 0, "lat": 21.1458, "lon": 79.0882, "elevation": 312},
+            {"sequence": 4, "stationCode": "WR", "stationName": "Wardha Jn", "platform": "2", "scheduledArrival": "18:08", "scheduledDeparture": "18:10", "actualArrival": "18:10", "actualDeparture": "18:12", "status": "SCHEDULED", "delayMinutes": 2, "lat": 20.7453, "lon": 78.5971, "elevation": 247},
+            {"sequence": 5, "stationCode": "BD", "stationName": "Badnera Jn", "platform": "1", "scheduledArrival": "19:50", "scheduledDeparture": "19:55", "actualArrival": "19:52", "actualDeparture": "19:57", "status": "SCHEDULED", "delayMinutes": 2, "lat": 20.8576, "lon": 77.7289, "elevation": 331},
+            {"sequence": 6, "stationCode": "AK", "stationName": "Akola Jn", "platform": "1", "scheduledArrival": "20:55", "scheduledDeparture": "21:00", "actualArrival": "20:55", "actualDeparture": "21:00", "status": "SCHEDULED", "delayMinutes": 0, "lat": 20.7059, "lon": 77.0019, "elevation": 282},
+            {"sequence": 7, "stationCode": "BSL", "stationName": "Bhusaval Jn", "platform": "3", "scheduledArrival": "23:10", "scheduledDeparture": "23:15", "actualArrival": "23:15", "actualDeparture": "23:20", "status": "SCHEDULED", "delayMinutes": 5, "lat": 21.0475, "lon": 75.7909, "elevation": 205},
+            {"sequence": 8, "stationCode": "MMR", "stationName": "Manmad Jn", "platform": "3", "scheduledArrival": "01:38", "scheduledDeparture": "01:40", "actualArrival": "01:40", "actualDeparture": "01:42", "status": "SCHEDULED", "delayMinutes": 2, "lat": 20.2514, "lon": 74.4377, "elevation": 557},
+            {"sequence": 9, "stationCode": "NK", "stationName": "Nashik Road", "platform": "3", "scheduledArrival": "02:35", "scheduledDeparture": "02:40", "actualArrival": "02:35", "actualDeparture": "02:40", "status": "SCHEDULED", "delayMinutes": 0, "lat": 19.9547, "lon": 73.8327, "elevation": 559},
+            {"sequence": 10, "stationCode": "KYN", "stationName": "Kalyan Jn", "platform": "5", "scheduledArrival": "05:22", "scheduledDeparture": "05:25", "actualArrival": "05:25", "actualDeparture": "05:28", "status": "SCHEDULED", "delayMinutes": 3, "lat": 19.2437, "lon": 73.1355, "elevation": 9},
+            {"sequence": 11, "stationCode": "CSMT", "stationName": "Mumbai CSMT", "platform": "18", "scheduledArrival": "06:50", "scheduledDeparture": None, "actualArrival": "06:50", "actualDeparture": None, "status": "SCHEDULED", "delayMinutes": 0, "lat": 18.9401, "lon": 72.8354, "elevation": 8}
+        ]
+    },
+    {
+        "trainNumber": "12627",
+        "trainName": "Karnataka Express",
+        "operator": "Indian Railways (South Western Zone)",
+        "type": "SUPERFAST",
+        "speed": 110,
+        "maxSpeed": 120,
+        "status": "ON_TIME",
+        "delayMinutes": 5,
+        "origin": {"code": "SBC", "name": "KSR Bengaluru", "departure": "19:20"},
+        "destination": {"code": "NDLS", "name": "New Delhi", "arrival": "09:00"},
+        "routeCoords": [
+            [12.9716, 77.5946],
+            [17.3850, 78.4867],
+            [21.1458, 79.0882],
+            [22.6100, 77.7600],
+            [23.2599, 77.4126],
+            [26.2183, 78.1828],
+            [27.1767, 78.0081],
+            [28.6139, 77.2090]
+        ],
+        "stops": [
+            {"sequence": 1, "stationCode": "SBC", "stationName": "KSR Bengaluru", "platform": "1", "scheduledArrival": None, "scheduledDeparture": "19:20", "actualDeparture": "19:20", "status": "DEPARTED", "delayMinutes": 0, "lat": 12.9716, "lon": 77.5946, "elevation": 920},
+            {"sequence": 2, "stationCode": "NGP", "stationName": "Nagpur Jn", "platform": "1", "scheduledArrival": "14:15", "scheduledDeparture": "14:20", "actualArrival": "14:20", "actualDeparture": "14:25", "status": "CURRENT", "delayMinutes": 5, "lat": 21.1458, "lon": 79.0882, "elevation": 312},
+            {"sequence": 3, "stationCode": "BPL", "stationName": "Bhopal Jn", "platform": "2", "scheduledArrival": "21:20", "scheduledDeparture": "21:25", "actualArrival": "21:25", "actualDeparture": "21:30", "status": "SCHEDULED", "delayMinutes": 5, "lat": 23.2599, "lon": 77.4126, "elevation": 498},
+            {"sequence": 4, "stationCode": "NDLS", "stationName": "New Delhi", "platform": "3", "scheduledArrival": "09:00", "scheduledDeparture": None, "actualArrival": "09:05", "actualDeparture": None, "status": "SCHEDULED", "delayMinutes": 5, "lat": 28.6139, "lon": 77.2090, "elevation": 216}
+        ]
     }
 ]
 
@@ -286,6 +353,11 @@ STATIONS_DATABASE = [
     {"code": "KOTA", "name": "Kota Junction", "city": "Kota", "zone": "West Central Railway", "platforms": 4, "lat": 25.1804, "lon": 75.8398, "facilities": ["WIFI", "ACCESSIBLE", "FOOD"], "elevation": 253},
     {"code": "ST", "name": "Surat", "city": "Surat", "zone": "Western Railway", "platforms": 4, "lat": 21.1702, "lon": 72.8311, "facilities": ["WIFI", "ACCESSIBLE", "FOOD", "ATM"], "elevation": 13},
     {"code": "NGP", "name": "Nagpur Junction", "city": "Nagpur", "zone": "Central Railway", "platforms": 8, "lat": 21.1458, "lon": 79.0882, "facilities": ["WIFI", "ACCESSIBLE", "FOOD", "ATM"], "elevation": 312},
+    {"code": "G", "name": "Gondia Junction", "city": "Gondia", "zone": "South East Central Railway", "platforms": 5, "lat": 21.4601, "lon": 80.1960, "facilities": ["WIFI", "ACCESSIBLE", "FOOD", "ATM"], "elevation": 311},
+    {"code": "AK", "name": "Akola Junction", "city": "Akola", "zone": "Central Railway", "platforms": 4, "lat": 20.7059, "lon": 77.0019, "facilities": ["WIFI", "ACCESSIBLE", "FOOD", "ATM"], "elevation": 282},
+    {"code": "BSL", "name": "Bhusaval Junction", "city": "Bhusaval", "zone": "Central Railway", "platforms": 8, "lat": 21.0475, "lon": 75.7909, "facilities": ["WIFI", "ACCESSIBLE", "FOOD", "ATM"], "elevation": 205},
+    {"code": "NK", "name": "Nashik Road", "city": "Nashik", "zone": "Central Railway", "platforms": 4, "lat": 19.9547, "lon": 73.8327, "facilities": ["WIFI", "ACCESSIBLE", "FOOD", "ATM"], "elevation": 559},
+    {"code": "KYN", "name": "Kalyan Junction", "city": "Kalyan", "zone": "Central Railway", "platforms": 8, "lat": 19.2437, "lon": 73.1355, "facilities": ["WIFI", "ACCESSIBLE", "FOOD", "ATM"], "elevation": 9},
     {"code": "MAO", "name": "Madgaon Junction", "city": "Goa", "zone": "Konkan Railway", "platforms": 4, "lat": 15.2736, "lon": 73.9582, "facilities": ["WIFI", "ACCESSIBLE", "FOOD", "ATM"], "elevation": 9}
 ]
 

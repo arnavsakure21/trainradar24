@@ -216,6 +216,86 @@ export const FALLBACK_STATIONS = [
     "elevation": 312
   },
   {
+    "code": "G",
+    "name": "Gondia Junction",
+    "city": "Gondia",
+    "zone": "South East Central Railway",
+    "platforms": 5,
+    "lat": 21.4601,
+    "lon": 80.196,
+    "facilities": [
+      "WIFI",
+      "ACCESSIBLE",
+      "FOOD",
+      "ATM"
+    ],
+    "elevation": 311
+  },
+  {
+    "code": "AK",
+    "name": "Akola Junction",
+    "city": "Akola",
+    "zone": "Central Railway",
+    "platforms": 4,
+    "lat": 20.7059,
+    "lon": 77.0019,
+    "facilities": [
+      "WIFI",
+      "ACCESSIBLE",
+      "FOOD",
+      "ATM"
+    ],
+    "elevation": 282
+  },
+  {
+    "code": "BSL",
+    "name": "Bhusaval Junction",
+    "city": "Bhusaval",
+    "zone": "Central Railway",
+    "platforms": 8,
+    "lat": 21.0475,
+    "lon": 75.7909,
+    "facilities": [
+      "WIFI",
+      "ACCESSIBLE",
+      "FOOD",
+      "ATM"
+    ],
+    "elevation": 205
+  },
+  {
+    "code": "NK",
+    "name": "Nashik Road",
+    "city": "Nashik",
+    "zone": "Central Railway",
+    "platforms": 4,
+    "lat": 19.9547,
+    "lon": 73.8327,
+    "facilities": [
+      "WIFI",
+      "ACCESSIBLE",
+      "FOOD",
+      "ATM"
+    ],
+    "elevation": 559
+  },
+  {
+    "code": "KYN",
+    "name": "Kalyan Junction",
+    "city": "Kalyan",
+    "zone": "Central Railway",
+    "platforms": 8,
+    "lat": 19.2437,
+    "lon": 73.1355,
+    "facilities": [
+      "WIFI",
+      "ACCESSIBLE",
+      "FOOD",
+      "ATM"
+    ],
+    "elevation": 9
+  },
+  {
     "code": "MAO",
     "name": "Madgaon Junction",
     "city": "Goa",
@@ -239,9 +319,9 @@ export const FALLBACK_TRAINS = [
     "trainName": "Vande Bharat Express",
     "operator": "Indian Railways",
     "type": "VANDE_BHARAT",
-    "lat": 25.343694,
-    "lng": 82.724966,
-    "bearing": 96.4,
+    "lat": 27.240775,
+    "lng": 77.972474,
+    "bearing": 153.6,
     "speed": 123,
     "maxSpeed": 160,
     "status": "ON_TIME",
@@ -291,10 +371,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Howrah Rajdhani Express",
     "operator": "Indian Railways (Eastern Zone)",
     "type": "RAJDHANI",
-    "lat": 23.696589,
-    "lng": 86.927532,
-    "bearing": 282.4,
-    "speed": 109,
+    "lat": 24.855305,
+    "lng": 84.754756,
+    "bearing": 286.4,
+    "speed": 110,
     "maxSpeed": 130,
     "status": "ON_TIME",
     "delayMinutes": 0,
@@ -355,10 +435,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Mumbai Tejas Rajdhani",
     "operator": "Indian Railways (Western Zone)",
     "type": "RAJDHANI",
-    "lat": 24.199875,
-    "lng": 75.413893,
-    "bearing": 201.8,
-    "speed": 120,
+    "lat": 21.637909,
+    "lng": 72.975115,
+    "bearing": 196.0,
+    "speed": 121,
     "maxSpeed": 140,
     "status": "ON_TIME",
     "delayMinutes": 3,
@@ -419,10 +499,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Bhopal Shatabdi Express",
     "operator": "Indian Railways (Northern Zone)",
     "type": "SHATABDI",
-    "lat": 26.003317,
-    "lng": 78.290501,
-    "bearing": 155.6,
-    "speed": 141,
+    "lat": 24.45172,
+    "lng": 78.042084,
+    "bearing": 205.9,
+    "speed": 142,
     "maxSpeed": 150,
     "status": "ON_TIME",
     "delayMinutes": 0,
@@ -471,10 +551,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Mysuru - Chennai Vande Bharat",
     "operator": "Indian Railways (Southern Zone)",
     "type": "VANDE_BHARAT",
-    "lat": 12.942663,
-    "lng": 79.262844,
-    "bearing": 81.8,
-    "speed": 117,
+    "lat": 12.505518,
+    "lng": 76.919624,
+    "bearing": 54.6,
+    "speed": 116,
     "maxSpeed": 130,
     "status": "ON_TIME",
     "delayMinutes": 0,
@@ -523,9 +603,9 @@ export const FALLBACK_TRAINS = [
     "trainName": "Howrah - Yesvantpur Duronto Express",
     "operator": "Indian Railways (South Eastern Zone)",
     "type": "DURONTO",
-    "lat": 13.064339,
-    "lng": 77.676493,
-    "bearing": 251.8,
+    "lat": 19.245584,
+    "lng": 84.775313,
+    "bearing": 223.8,
     "speed": 105,
     "maxSpeed": 120,
     "status": "DELAYED",
@@ -579,10 +659,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Kerala Superfast Express",
     "operator": "Indian Railways (Southern Zone)",
     "type": "SUPERFAST",
-    "lat": 24.566119,
-    "lng": 77.752666,
-    "bearing": 193.5,
-    "speed": 92,
+    "lat": 17.720336,
+    "lng": 78.540334,
+    "bearing": 188.7,
+    "speed": 91,
     "maxSpeed": 110,
     "status": "DELAYED",
     "delayMinutes": 14,
@@ -647,10 +727,10 @@ export const FALLBACK_TRAINS = [
     "trainName": "Mumbai - Madgaon Jan Shatabdi Express",
     "operator": "Indian Railways (Konkan Railway)",
     "type": "SHATABDI",
-    "lat": 18.223106,
-    "lng": 73.444167,
-    "bearing": 171.8,
-    "speed": 98,
+    "lat": 17.331126,
+    "lng": 73.423963,
+    "bearing": 197.4,
+    "speed": 99,
     "maxSpeed": 120,
     "status": "ON_TIME",
     "delayMinutes": 0,
@@ -694,6 +774,146 @@ export const FALLBACK_TRAINS = [
       [
         15.2736,
         73.9582
+      ]
+    ],
+    "stopsCount": 4
+  },
+  {
+    "trainNumber": "12106",
+    "trainName": "Vidarbha Superfast Express",
+    "operator": "Indian Railways (Central Railway)",
+    "type": "SUPERFAST",
+    "lat": 19.226939,
+    "lng": 73.118932,
+    "bearing": 223.1,
+    "speed": 105,
+    "maxSpeed": 110,
+    "status": "ON_TIME",
+    "delayMinutes": 0,
+    "origin": {
+      "code": "G",
+      "name": "Gondia Jn",
+      "departure": "14:55"
+    },
+    "destination": {
+      "code": "CSMT",
+      "name": "Mumbai CSMT",
+      "arrival": "06:50"
+    },
+    "nextStop": {
+      "code": "NGP",
+      "name": "Nagpur Jn",
+      "platform": "8",
+      "eta": "In 18 mins"
+    },
+    "routeCoords": [
+      [
+        21.4601,
+        80.196
+      ],
+      [
+        21.2408,
+        79.6644
+      ],
+      [
+        21.1458,
+        79.0882
+      ],
+      [
+        20.7453,
+        78.5971
+      ],
+      [
+        20.8576,
+        77.7289
+      ],
+      [
+        20.7059,
+        77.0019
+      ],
+      [
+        21.0475,
+        75.7909
+      ],
+      [
+        20.2514,
+        74.4377
+      ],
+      [
+        19.9547,
+        73.8327
+      ],
+      [
+        19.2437,
+        73.1355
+      ],
+      [
+        18.9401,
+        72.8354
+      ]
+    ],
+    "stopsCount": 11
+  },
+  {
+    "trainNumber": "12627",
+    "trainName": "Karnataka Express",
+    "operator": "Indian Railways (South Western Zone)",
+    "type": "SUPERFAST",
+    "lat": 16.488989,
+    "lng": 78.305585,
+    "bearing": 10.9,
+    "speed": 116,
+    "maxSpeed": 120,
+    "status": "ON_TIME",
+    "delayMinutes": 5,
+    "origin": {
+      "code": "SBC",
+      "name": "KSR Bengaluru",
+      "departure": "19:20"
+    },
+    "destination": {
+      "code": "NDLS",
+      "name": "New Delhi",
+      "arrival": "09:00"
+    },
+    "nextStop": {
+      "code": "NGP",
+      "name": "Nagpur Jn",
+      "platform": "1",
+      "eta": "In 18 mins"
+    },
+    "routeCoords": [
+      [
+        12.9716,
+        77.5946
+      ],
+      [
+        17.385,
+        78.4867
+      ],
+      [
+        21.1458,
+        79.0882
+      ],
+      [
+        22.61,
+        77.76
+      ],
+      [
+        23.2599,
+        77.4126
+      ],
+      [
+        26.2183,
+        78.1828
+      ],
+      [
+        27.1767,
+        78.0081
+      ],
+      [
+        28.6139,
+        77.209
       ]
     ],
     "stopsCount": 4
