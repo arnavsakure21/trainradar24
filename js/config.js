@@ -12,7 +12,7 @@ export const CONFIG = {
   // Backend API base URL — points to the Railway-hosted Python server.
   // After Railway deployment, replace this with your actual Railway URL.
   // e.g. "https://trainradar24-backend.up.railway.app"
-  API_BASE: "https://trainradar24-backend.up.railway.app",
+  API_BASE: "https://web-production-ff312.up.railway.app",
 
   // MapTiler Map Styles
   MAP_STYLES: {
